@@ -1,0 +1,14 @@
+#gamePlay{
+    border: 1px solid orange;
+}
+
+.start{
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
