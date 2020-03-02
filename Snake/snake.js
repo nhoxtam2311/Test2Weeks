@@ -13,18 +13,18 @@ function snakePart(snake) {
     ctx.fillRect(snake.x, snake.y, 10, 10);
 }
 
-function displaySnake(snake) {
+function showSnake(snake) {
     snake.forEach(snakePart);
 }
 
 background();
-displaySnake(snake);
+showSnake(snake);
 
-function nextStateOfSnake() {
+function nextState() {
     const head = { x: snake[0].x + x, y: snake[0].y + y };
     console.log(head);
     snake.unshift(head);
-    gameModeB();
+    gamePlay();
     if (eatFood()) {
         headSnake = { x: foodX, y: foodY };
         snake.unshift(headSnake);
@@ -97,16 +97,16 @@ function keyDown(e) {
 }
 
 function play() {
-    setTimeout(function start() {
-        background();
-        nextStateOfSnake();
-        displayFood();
-        displaySnake(snake);
-        play()
-    }, 300);
+        setTimeout(function start() {
+            background();
+            nextState();
+            displayFood();
+            showSnake(snake);
+            play()
+        },500);    
 }
 
-function gameModeB() {
+function gamePlay() {
     if (snake[0].x < 0) {
         snake[0].x = app.width -10;
     }
